@@ -2,47 +2,45 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true,
+    jest: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ["plugin:react/recommended", "airbnb", "prettier"],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
   },
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
-
+      jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: "module"
   },
   settings: {
     "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ["react", "@typescript-eslint", "prettier"],
+  ignorePatterns: ["node_modules/", "config/", "public/", "scripts/"],
   rules: {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".ts", ".jsx", ".tsx"] }],
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      1,
+      { extensions: [".js", ".ts", ".jsx", ".tsx"] }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never"
       }
     ]
-  },
+  }
 };
